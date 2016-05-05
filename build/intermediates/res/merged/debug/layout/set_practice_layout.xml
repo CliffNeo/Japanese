@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/set_practice_layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+	   android:orientation="horizontal"
+	   android:focusable="true"
+       android:focusableInTouchMode="true">
+       
+       <TextView 
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="@string/set_practice_textview_name"/>
+       
+       <EditText 
+           android:id="@+id/set_practice_edittext_name"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="2"
+           android:hint=""/>
+       
+       <TextView 
+           android:id="@+id/set_practice_textview_hint"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"/>
+   </LinearLayout>
+   
+   <Button 
+       android:id="@+id/set_practice_button_selectword"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="@string/set_practice_button_select"/>
+   
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+	   android:orientation="horizontal">
+       
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/set_practice_tv_setdate"/>
+       
+       <Spinner 
+           android:layout_width="60dp"
+           android:layout_height="wrap_content"
+           android:id="@+id/set_practice_spinner"/>
+       
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/set_practice_tv_settime"/>
+       
+   </LinearLayout>
+   
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+	   android:orientation="horizontal">
+       
+       <Button 
+           android:id="@+id/set_practice_button_confirm"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="@string/set_practice_button_confirm"
+           android:layout_marginLeft="20dp"
+           android:layout_marginRight="20dp"/>
+       
+       <Button 
+           android:id="@+id/set_practice_button_cancle"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="@string/set_practice_button_cancle"
+           android:layout_marginLeft="20dp"
+           android:layout_marginRight="20dp"/>
+   </LinearLayout>
+</LinearLayout>
+
