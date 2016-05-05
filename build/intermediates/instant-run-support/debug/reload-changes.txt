@@ -1,7 +1,0 @@
-CHANGED,D:\AndroidStudioProjects\Japanese\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\japanese\RandomTestActivity$1$override.class
-CHANGED,D:\AndroidStudioProjects\Japanese\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,D:\AndroidStudioProjects\Japanese\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\japanese\ListClickActivity$override.class
-CHANGED,D:\AndroidStudioProjects\Japanese\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\japanese\TestActivityUtil$1$override.class
-CHANGED,D:\AndroidStudioProjects\Japanese\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\japanese\TestActivityUtil$override.class
-CHANGED,D:\AndroidStudioProjects\Japanese\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\japanese\RandomTestActivity$override.class
-CHANGED,D:\AndroidStudioProjects\Japanese\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\japanese\RandomTestActivity$2$override.class
