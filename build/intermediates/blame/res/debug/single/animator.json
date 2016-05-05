@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\Japanese\\build\\intermediates\\res\\merged\\debug\\animator\\anim_in.xml",
+        "source": "D:\\AndroidStudioProjects\\Japanese\\res\\animator\\anim_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Japanese\\build\\intermediates\\res\\merged\\debug\\animator\\anim_out.xml",
+        "source": "D:\\AndroidStudioProjects\\Japanese\\res\\animator\\anim_out.xml"
+    }
+]
