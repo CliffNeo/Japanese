@@ -32,12 +32,12 @@
         "source": "D:\\AndroidStudioProjects\\Japanese\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\Japanese\\build\\intermediates\\res\\merged\\debug\\layout\\set_practice_select_item_layout.xml",
-        "source": "D:\\AndroidStudioProjects\\Japanese\\res\\layout\\set_practice_select_item_layout.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\Japanese\\build\\intermediates\\res\\merged\\debug\\layout\\cell_card_front.xml",
         "source": "D:\\AndroidStudioProjects\\Japanese\\res\\layout\\cell_card_front.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Japanese\\build\\intermediates\\res\\merged\\debug\\layout\\set_practice_select_item_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\Japanese\\res\\layout\\set_practice_select_item_layout.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\Japanese\\build\\intermediates\\res\\merged\\debug\\layout\\cell_card_back.xml",

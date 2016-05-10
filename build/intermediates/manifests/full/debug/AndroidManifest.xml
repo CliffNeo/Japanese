@@ -22,9 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.japanese.RandomTestActivity" />
+        <activity android:name="com.example.japanese.TestActivity" />
         <activity android:name="com.example.japanese.ListActivity" />
-        <activity android:name="com.example.japanese.ListClickActivity" />
+        <activity android:name="com.example.useless.ListClickActivity" />
         <activity android:name="com.example.practice.SetPracticeActivity" />
 
         <provider
@@ -35,7 +35,7 @@
 
         <activity android:name="com.example.practice.SelectActivity" />
         <activity android:name="com.example.practice.PracticeListActivity" />
-        <activity android:name="com.example.practice.PracticeTestActivity" />
+        <activity android:name="com.example.useless.PracticeTestActivity" />
     </application>
 
 </manifest>

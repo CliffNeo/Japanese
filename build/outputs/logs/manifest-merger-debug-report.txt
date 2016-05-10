@@ -45,18 +45,18 @@ category#android.intent.category.LAUNCHER
 ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:22:17-77
 	android:name
 		ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:22:27-74
-activity#com.example.japanese.RandomTestActivity
-ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:25:9-64
+activity#com.example.japanese.TestActivity
+ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:25:9-59
 	android:name
-		ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:25:19-52
+		ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:25:19-47
 activity#com.example.japanese.ListActivity
 ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:26:9-58
 	android:name
 		ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:26:19-46
-activity#com.example.japanese.ListClickActivity
-ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:27:9-63
+activity#com.example.useless.ListClickActivity
+ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:27:9-83
 	android:name
-		ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:27:19-51
+		ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:27:19-71
 activity#com.example.practice.SetPracticeActivity
 ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:28:9-86
 	android:name
@@ -77,7 +77,7 @@ activity#com.example.practice.PracticeListActivity
 ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:35:9-87
 	android:name
 		ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:35:19-75
-activity#com.example.practice.PracticeTestActivity
-ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:36:9-87
+activity#com.example.useless.PracticeTestActivity
+ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:36:9-86
 	android:name
-		ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:36:19-75
+		ADDED from D:\AndroidStudioProjects\Japanese\AndroidManifest.xml:36:19-74

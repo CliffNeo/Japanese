@@ -202,7 +202,6 @@ public class SetPracticeActivity extends OrmLiteBaseActivity<OOH> implements OnC
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// TODO �Զ����ɵķ������
 		super.onActivityResult(requestCode, resultCode, data);
 		if(requestCode == 1 && resultCode > 0){
 			select.setText("选择单词：（已选：" + resultCode + ")");

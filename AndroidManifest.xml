@@ -22,9 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="RandomTestActivity"></activity>
+        <activity android:name=".TestActivity"></activity>
         <activity android:name="ListActivity"></activity>
-        <activity android:name="ListClickActivity"></activity>
+        <activity android:name="com.example.useless.ListClickActivity"></activity>
         <activity android:name="com.example.practice.SetPracticeActivity"></activity>
         <provider android:name="DatabaseProvider" 
             android:exported="true" 
@@ -33,7 +33,7 @@
         </provider>
         <activity android:name="com.example.practice.SelectActivity"></activity>
         <activity android:name="com.example.practice.PracticeListActivity"></activity>
-        <activity android:name="com.example.practice.PracticeTestActivity"></activity>
+        <activity android:name="com.example.useless.PracticeTestActivity"></activity>
         
     </application>
 

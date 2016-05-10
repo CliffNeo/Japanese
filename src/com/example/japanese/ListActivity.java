@@ -50,18 +50,22 @@ public class ListActivity extends Activity {
 		adapter = new LetAdapter(ListActivity.this, R.layout.list_item_layout, list);
 		ListView listView = (ListView) findViewById(R.id.list);
 		listView.setAdapter(adapter);
+        dbHelper = new JDBOH(this, "Letter.db", null, 1);
+        db = dbHelper.getReadableDatabase();
 		listView.setOnItemClickListener(new OnItemClickListener(){
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				Let let = list.get(position);
-				letter = let;
+				letter = list.get(position);
 				loca = position;
-				Intent intent = new Intent(ListActivity.this,ListClickActivity.class);
-				intent.putExtra("Spe", let.getSpe());
-				intent.putExtra("Pro", let.getPro());
-				startActivityForResult(intent, 1);
+				LetManage lm = new LetManage();
+                lm.addLet(letter);
+                TestActivity.actionStartForResult(ListActivity.this,lm);
+				/*Intent intent = new Intent(ListActivity.this,ListClickActivity.class);
+				intent.putExtra("Spe", letter.getSpe());
+				intent.putExtra("Pro", letter.getPro());
+				startActivityForResult(intent, 1);*/
 			}
 			
 		});
@@ -83,8 +87,6 @@ public class ListActivity extends Activity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		dbHelper = new JDBOH(this, "Letter.db", null, 1);
-		db = dbHelper.getReadableDatabase();
 		if(requestCode == 1 && resultCode > 0){
 			
 			new Thread(new Runnable(){
@@ -96,7 +98,6 @@ public class ListActivity extends Activity {
 					if(result.moveToFirst()){
 						do{
 							count = result.getInt(result.getColumnIndex("wrco"));
-							Log.d("DB",String.valueOf(count));
 						}while(result.moveToNext());
 					}else {
 						Log.d("DB","empty");

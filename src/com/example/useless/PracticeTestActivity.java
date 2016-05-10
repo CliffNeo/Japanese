@@ -1,4 +1,4 @@
-package com.example.practice;
+package com.example.useless;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,6 +27,9 @@ import com.example.japanese.Let;
 import com.example.japanese.LetManage;
 import com.example.japanese.R;
 import com.example.japanese.ping;
+import com.example.practice.CallAlarm;
+import com.example.practice.OOH;
+import com.example.practice.Practice;
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
 

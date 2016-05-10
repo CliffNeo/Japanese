@@ -1,9 +1,13 @@
 package com.example.practice;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 
+import com.example.japanese.Let;
+import com.example.japanese.LetManage;
+import com.example.japanese.TestActivity;
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
 
@@ -50,7 +54,31 @@ public class PracticeListActivity extends OrmLiteBaseActivity<OOH> {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				Practice p = list.get(position);
-				PracticeTestActivity.actionStart(PracticeListActivity.this, p.getName());
+                String name = p.getName();
+                Practice pra = null;
+                List<Let> list = new ArrayList<Let>();
+
+				try {
+					dao = getHelper().getUserDataDao();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				try {
+					pra = dao.queryBuilder().where().eq("name", name).query().get(0);
+				} catch (SQLException e) {
+					Log.d("PracticeTest", "query error");
+					e.printStackTrace();
+				}
+				String[] lets = pra.getPings().split("#");
+				for(int i=0;i<lets.length;i++){
+					String[] part = lets[i].split("\\-");
+					list.add(new Let(part[0],part[1]));
+				}
+                LetManage lm = new LetManage();
+                lm.setList(list);
+
+                TestActivity.actionStart(PracticeListActivity.this,lm);
+				//PracticeTestActivity.actionStart(PracticeListActivity.this, p.getName());
 			}
 			
 		});

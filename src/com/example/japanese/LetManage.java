@@ -4,6 +4,7 @@ import java.util.*;
 
 public class LetManage {
 	private List<Let> lets = new ArrayList<Let>();
+
 	public void addLet(String spe,String pro){
 		Let a = new Let(spe,pro);
 		lets.add(a);
@@ -11,7 +12,16 @@ public class LetManage {
 	public void addLet(Let a){
 		lets.add(a);
 	}
-	
+
+	public boolean deleteLet(Let a){
+        if(lets.contains(a)){
+            lets.remove(a);
+            return true;
+        }else {
+            return false;
+        }
+
+    }
 	public Let searchSpe(String spe){
 		Iterator<Let> it = lets.iterator();
 		while(it.hasNext()){
@@ -31,15 +41,12 @@ public class LetManage {
 				return a;	
 			}
 		}
-		//System.out.println("��ʮ�� ��������ʧ��");
 		return null;
 	}
 	
 	public Let random(){
 		Random r = new Random();
 		int i = r.nextInt(lets.size()-1);
-		//System.out.println("i " + i);
-		//System.out.println("size " + lets.size());
 		return lets.get(i);
 	}
 	
@@ -51,8 +58,16 @@ public class LetManage {
 	public List<Let> getList(){
 		return lets;
 	}
-	
+
+	public void setList(List<Let> list){
+		this.lets = list;
+	}
 	public void eraseLets() {
+
 		this.lets = new ArrayList<Let>();
+	}
+
+	public int letAmount(){
+		return lets.size();
 	}
 }

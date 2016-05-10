@@ -24,7 +24,8 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				RandomTestActivity.actionStart(MainActivity.this);
+				TestActivity.actionStart(MainActivity.this,new ping().getPings());
+				TestActivity.actionStart(MainActivity.this);
 			}
 			
 		});

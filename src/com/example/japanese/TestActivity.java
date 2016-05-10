@@ -17,10 +17,9 @@ import android.widget.TextView;
 import android.os.Handler;
 import android.widget.Toast;
 
-
-public class RandomTestActivity extends Activity implements OnClickListener{
+public class TestActivity extends Activity implements OnClickListener{
 	
-	private LetManage lm = new LetManage();
+	private static LetManage lm = new LetManage();
 	private JDBOH dbHelper;
 	private SQLiteDatabase db;
 	private Let let;
@@ -38,10 +37,22 @@ public class RandomTestActivity extends Activity implements OnClickListener{
 
         @Override
         public void handleMessage(Message msg) {
-			TestActivityUtil.iniIO(Letter,button1,button2,button3,button4,lm.random());
-            backToFront();
+            if(lm.letAmount() == 2){
+                lm.deleteLet(let);
+                let = lm.getList().get(0);
+                ra = TestActivityUtil.iniIO(Letter, button1, button2, button3, button4, let);
+                backToFront();
+            }else if(lm.letAmount() > 2){
+                lm.deleteLet(let);
+                let = lm.random();
+                ra = TestActivityUtil.iniIO(Letter, button1, button2, button3, button4, let);
+                backToFront();
+            } else{
+                TestActivity.this.finish();
+            }
         }
     };
+    private static boolean doneQuit = false;
 
 	
 	@Override
@@ -58,7 +69,6 @@ public class RandomTestActivity extends Activity implements OnClickListener{
 		button3.setOnClickListener(this);
 		button4 = (Button) findViewById(R.id.select_4);
 		button4.setOnClickListener(this);
-		lm = new ping().getPings();
 		dbHelper = new JDBOH(this, "Letter.db", null, 1);
 		db = dbHelper.getWritableDatabase();
         in = (AnimatorSet) AnimatorInflater.loadAnimator(this,R.animator.anim_in);
@@ -70,7 +80,11 @@ public class RandomTestActivity extends Activity implements OnClickListener{
 
 	@Override
 	protected void onStart() {
-		let = lm.random();
+        if (doneQuit){
+            let = lm.getList().get(0);
+        }else {
+            let = lm.random();
+        }
 		ra = TestActivityUtil.iniIO(Letter,button1,button2,button3,button4,let);
 		super.onStart();
 	}
@@ -82,7 +96,7 @@ public class RandomTestActivity extends Activity implements OnClickListener{
     }
 	
 	public static void actionStart(Context context){
-		Intent intent = new Intent(context,RandomTestActivity.class);
+		Intent intent = new Intent(context,TestActivity.class);
 		context.startActivity(intent);
 	}
 
@@ -106,21 +120,32 @@ public class RandomTestActivity extends Activity implements OnClickListener{
 	
 	private void click(boolean rw){
 		if(rw){
-			Toast.makeText(RandomTestActivity.this, "right", Toast.LENGTH_SHORT).show();
-            frontToBack();
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    handler.sendMessage(new Message());
+			Toast.makeText(TestActivity.this, "right", Toast.LENGTH_SHORT).show();
+			if(TestActivity.doneQuit){
+                int wrco = TestActivityUtil.click(rw,TestActivity.this,db,let);
+                if (wrco > 0){
+                    TestActivityUtil.wrco = 0;
+                    Intent intent = new Intent();
+                    intent.putExtra("wrco", wrco);
+                    setResult(wrco, intent);
+                    finish();
                 }
-            }).start();
+			}else{
+                frontToBack();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        handler.sendMessage(new Message());
+                    }
+                }).start();
+            }
 		}else{
-            TestActivityUtil.click(false,RandomTestActivity.this,db,let);
+            TestActivityUtil.click(false,TestActivity.this,db,let);
 		}
 	}
 
@@ -144,5 +169,17 @@ public class RandomTestActivity extends Activity implements OnClickListener{
         in.setTarget(mFlCardFront);
         out.start();
         in.start();
+    }
+
+	public static void actionStart(Context context, LetManage lm){
+        TestActivity.doneQuit = false;
+		TestActivity.lm = lm;
+        context.startActivity(new Intent(context,TestActivity.class));
+	}
+
+    public static void actionStartForResult(Activity context, LetManage lm){
+        TestActivity.doneQuit = true;
+        TestActivity.lm = lm;
+        context.startActivityForResult(new Intent(context,TestActivity.class),1);
     }
 }

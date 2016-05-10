@@ -22,7 +22,7 @@ public class TestActivityUtil {
     private static LetManage lm = new ping().getPings();
     private static SQLiteDatabase db;
     private static Let let;
-    private static int wrco = 0;
+    protected static int wrco = 0;
 
 
     public static int iniIO(TextView Letter, Button button1,Button button2,Button button3,Button button4
@@ -68,17 +68,11 @@ public class TestActivityUtil {
         }
     }
 
-    public static void click(boolean rw, Activity con, SQLiteDatabase db,Let let){
+    public static int click(boolean rw, Activity con, SQLiteDatabase db,Let let){
         TestActivityUtil.db = db;
         TestActivityUtil.let = let;
         if(rw){
-            Log.d("wrco",String.valueOf(TestActivityUtil.wrco));
-            Toast.makeText(con, "right", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent();
-            intent.putExtra("wrco", TestActivityUtil.wrco);
-            con.setResult(TestActivityUtil.wrco, intent);
-            TestActivityUtil.wrco = 0;
-            con.finish();
+            return TestActivityUtil.wrco;
         }else {
             Toast.makeText(con, "wrong", Toast.LENGTH_SHORT).show();
             new Thread(new Runnable() {
@@ -103,5 +97,6 @@ public class TestActivityUtil {
                 }
             }).start();
         }
+        return -1;
     }
 }

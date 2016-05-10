@@ -1,16 +1,20 @@
-package com.example.japanese;
+package com.example.useless;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import com.example.japanese.JDBOH;
+import com.example.japanese.Let;
+import com.example.japanese.R;
+import com.example.japanese.TestActivityUtil;
 
 public class ListClickActivity extends Activity implements OnClickListener{
 	
@@ -32,7 +36,6 @@ public class ListClickActivity extends Activity implements OnClickListener{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.test_layout);
 		intent = getIntent();
-		Log.d("pro",intent.getStringExtra("Spe") );
 		let = new Let(intent.getStringExtra("Spe"), intent.getStringExtra("Pro"));
 		Letter = (TextView) findViewById(R.id.tv_ping_test_pro);
 		button1 = (Button) findViewById(R.id.select_1);
